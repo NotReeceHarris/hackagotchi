@@ -9,5 +9,26 @@
     <script src="/js/frames.js"></script>
     <script src="/js/neutralino.js"></script>
     <script src="/js/main.js"></script>
+    <script type="module">
+        import { io } from "https://cdn.socket.io/4.8.1/socket.io.esm.min.js";
+
+        const socket = io('http://localhost:3000', {
+            transports: ['websocket'],
+            reconnectionAttempts: 5,
+            reconnectionDelay: 1000
+        });
+
+        socket.on('connect', (s) => {
+          console.log('Connected to server');
+        });
+
+        socket.on('message', () => {
+            console.log('Message received from server');
+        });
+
+        init()
+
+        console.log(frames)
+    </script>
   </body>
 </html>

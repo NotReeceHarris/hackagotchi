@@ -5,6 +5,7 @@
   "defaultMode": "window",
   "port": 0,
   "documentRoot": "/resources/",
+  "enableExtensions": true,
   "url": "/",
   "enableServer": true,
   "enableNativeAPI": true,
@@ -16,7 +17,8 @@
   "nativeAllowList": [
     "app.*",
     "os.*",
-    "debug.log"
+    "debug.log",
+    "extensions.*"
   ],
   "globalVariables": {
     "TEST1": "Hello",
@@ -30,6 +32,12 @@
       "value2": {}
     }
   },
+  "extensions": [
+    {
+      "id": "backend",
+      "command": "node ${NL_PATH}/extensions/backend/main.js ${NL_PORT}"
+    }
+  ],
   "modes": {
     "window": {
       "title": "Hackagotchi",

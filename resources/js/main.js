@@ -3,6 +3,8 @@
 // Feel free to use any frontend framework you like :)
 // See more details: https://neutralino.js.org/docs/how-to/use-a-frontend-library
 
+let next_frames = null;
+
 function init() {
     const container = document.createElement("div");
     const pre = document.createElement("pre");
@@ -22,6 +24,15 @@ function init() {
 
         if (elapsed > frameDuration) {
             pre.innerText = active_frames[currentFrame];
+
+            if (currentFrame === active_frames.length - 1) {
+                // Switch to next frames if available
+                if (next_frames) {
+                    active_frames = next_frames;
+                    next_frames = null; // Clear next frames after switching
+                }
+            }
+
             currentFrame = (currentFrame + 1) % active_frames.length; // Loop through frames
             lastFrameTime = timestamp;
         }
@@ -31,8 +42,6 @@ function init() {
 
     animate()
 
-    const info = document.createElement("div");
-    document.body.appendChild(info);
 }
 
 /*
@@ -101,4 +110,3 @@ if(NL_OS != "Darwin") { // TODO: Fix https://github.com/neutralinojs/neutralinoj
 
 // Display app information
 //initCanvas();
-init()
