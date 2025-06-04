@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+* {
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('./fonts/RobotoMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: rgb(42, 42, 42);
+}
+
+.blob {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.blob pre {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #56ae56;
+    font-size: 6px;
+    font-family: 'RobotoMono', monospace;
+    text-shadow: 0 0 20px #56ae56;
+}
+

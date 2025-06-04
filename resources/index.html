@@ -6,9 +6,21 @@
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
+
+    <div class="z-10 absolute top-0 left-0 p-4 text-sm text-white">
+
+      <div class="flex gap-3">
+        <button class="cursor-pointer">
+          OSINT / RECON
+        </button>
+      </div>
+
+    </div>
+
     <script src="/js/frames.js"></script>
     <script src="/js/neutralino.js"></script>
     <script src="/js/main.js"></script>
+
     <script type="module">
         import { io } from "https://cdn.socket.io/4.8.1/socket.io.esm.min.js";
 
@@ -27,8 +39,6 @@
         });
 
         init()
-
-        console.log(frames)
     </script>
   </body>
 </html>
