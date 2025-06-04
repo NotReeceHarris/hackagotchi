@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "neu run",
+    "build": "neu build"
+  },
+  "devDependencies": {
+    "@neutralinojs/neu": "^11.4.0"
+  }
+}
